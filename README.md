@@ -2,21 +2,20 @@
 A JQueryUI plugin for creating user customizable dashboard pages composed of multiple widgets (similar to MyYahoo.com, Start.Me and Protopage.com).
 
 The dashboard is composed of widgets arranged in horizontal bands. Each band can have between 1 and 3
-columns and its own height. Both the number of columns and the height of each band can be
+columns and its own height. The number of columns and the height of each band can be
 interactively edited by the user.
 
 Widgets are delimited areas, resembling standard windows, that can be drag-n-dropped around
-the dashboard. Each widget has a caption that hosts buttons for triggering edit, delete and
-display info actions. It´s up to the component host application to provide handlers to
-execute each of the actions required by the user - the Flex Dashboard calls a host provided
-callback for each action requested by the interacting user. 
+the dashboard. Each widget has a caption that hosts buttons for triggering "Edit", "Delete", 
+"Display Info" and "Refresh" actions. The flexDash client application is responsible for providing handler functions for each action. More specifically, flexDash calls callback functions provided by the client application for each action requested by the interacting user. 
 
-Any modification to the dashboard lay-out or contents triggers a 'changed' event. One can
-use an event handler for the 'changed' event to persist the current dashboard configuration.
-The 'loadFromJson' initializes the dashboard from given JSON formatted configuration. The 
-'asJson' serializes the current dashboard configuration to a JSON formatted string.
+Any modification to the dashboard lay-out or to the dashboard contents triggers a "changed" event. 
+The "loadFromJson" method sets the dashboard state to the state serialized into a given JSON configuration. The 
+"asJson" method goes the opposite way, serializing the current dashboard state to a JSON formatted configuration.
 
 ## Dependencies:
     jQuery 1.7.1+,
     jQueryUI 1.9+,
     jQuery Resize Plugin (http://github.com/cowboy/jquery-resize/)
+    
+
