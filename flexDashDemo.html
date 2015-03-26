@@ -3,8 +3,8 @@
 <head>
     <title>FlexDash 1.0 Demo</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <link rel="stylesheet" href="css/jquery.ui.flexDash.css" />
+    <link rel="stylesheet" href="stylesheets/jquery-ui.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.ui.flexDash.css" />
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -25,16 +25,16 @@
     <div id="dashboard" style="width: 100%">
     </div>
 
-    <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.core.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.button.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.mouse.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.resizable.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.draggable.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.droppable.js"></script>
-    <script type="text/javascript" src="js/jquery.ui.flexDash.js"></script>
-    <script type="text/javascript" src="js/jquery.ba-resize.js"></script>
+    <script type="text/javascript" src="javascripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.button.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.mouse.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.resizable.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.draggable.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.droppable.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ui.flexDash.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.ba-resize.js"></script>
     <script>
         $(function () {
            // Firefox and Chrome (and probably other browsers) "cache" the state of the checkbox.
@@ -67,7 +67,6 @@
            $('#btnSaveConfig').on('click', function () {
                var dash_json =
                        $('#dashboard').flexDash('asJson');
-               //alert('Dash JSON:\r\n' + dash_json);
                localStorage.setItem('lastSavedConfig', dash_json);
            });
 
