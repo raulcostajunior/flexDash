@@ -1,0 +1,200 @@
+.dashBand {
+    padding: 4px, 0;
+    position: relative;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.dashBand-placeHolder {
+    border: 1px dashed #555;
+    height: 4.8em;
+    width: 32%;
+}
+
+.dashBand-edit:hover {
+    border: 2px solid #45759f;
+    background-color: #dfeefc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.dashBand-selected {
+    border: 2px solid darkorange;
+    background-color: #ffe5cc;
+    border-radius: 3px;
+    cursor: default;
+}
+
+#dashColumnCountSelector {
+    position: absolute;
+    width: 93px;
+    height: 25px;
+    border: 2px solid #45759f;
+    border-radius: 3px;
+    background-color: #dfeefc;
+}
+
+.dashColumnCountBtn {
+    color: #fff;
+    background-color: #3276b1;
+    border-color: #285e8e;
+    border-radius: 4px;
+    height: 21px;
+    width: 28px;
+    margin-left: 2px;
+    margin-top: 2px;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.dashColumnCountBtn:disabled {
+    color: #ccc;
+    background-color: #7095b5;
+    border-style: inset;
+    cursor: default;
+}
+
+.dashWidget {
+    display: inline-block;
+    margin-left: 12px;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 100%;
+    opacity: 1.0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.dashBand-edit:hover .dashWidget {
+    opacity: 0.7;
+}
+
+.dashBand-selected .dashWidget {
+    opacity: 0.7;
+}
+
+.dashWidget-header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 0 0 #eee inset;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    background: linear-gradient(#efefef, #dfdfdf) repeat scroll 0 transparent;
+    background: -moz-linear-gradient(#efefef, #dfdfdf) repeat scroll 0 transparent;
+    background: -webkit-linear-gradient(#efefef, #dfdfdf) repeat scroll 0 transparent;
+
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+
+.dashBand-edit:hover .dashWidget-header {
+    cursor: pointer;
+}
+
+.dashBand-selected .dashWidget-header {
+    cursor: default;
+}
+
+.dashWidget-caption {
+    padding: 2px 8.5em 2px 8px; /* Right-padding in em due to the dimensioning of .dashWidget-toolbar */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin-right: 11.4em;
+
+    height: 1.5em;
+    line-height: 1.2em;
+
+    color: #555;
+    overflow: hidden;
+    text-shadow: 0 1px 0 #fff;
+    white-space: nowrap;
+}
+
+.dashWidget-body
+{
+    padding: 4px;
+    position: relative;
+    overflow:auto;
+    height:90%;
+}
+
+.dashWidget-contents {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;   
+}
+
+.dashWidget-toolbar {
+    float: right;
+    width: 11.0em; /* jQuery UI buttons are 2.4em wide (each) */
+    height: 20px;
+    padding: 1px;
+}
+
+.dashWidget-captionBtn {
+    width: 20px;
+    height: 18px;
+    float: left;
+    margin-top: 1px;
+}
+
+.dashBand-edit:hover .dashWidget-captionBtn {
+    cursor: pointer;
+}
+
+.dashBand-selected .dashWidget-captionBtn {
+    cursor: default;
+}
+
+.dashBand-1col .dashWidget {
+    width: 98%;
+}
+
+.dashBand-2col .dashWidget{
+    width: 48.65%;
+}
+
+.dashBand-3col .dashWidget{
+    width: 32.15%;
+}
+
+
+.dashSlot {
+    display: inline-block;
+    margin-left: 12px;
+    position: absolute;
+    border: 2px dashed #45759f;
+    border-radius: 3px;
+    height: 100%;
+    opacity: 1.0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.dashSlot-hover {
+    border: 2px solid darkorange;
+}
+
+.dashBand-1col .dashSlot {
+    width: 98%;
+}
+
+.dashBand-2col .dashSlot{
+    width: 48.65%;
+}
+
+.dashBand-3col .dashSlot{
+    width: 32.15%;
+}
+
+
