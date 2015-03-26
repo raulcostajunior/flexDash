@@ -1,9 +1,8 @@
 # flexDash
-A JQueryUI plugin for creating user customizable dashboard pages composed of multiple widgets (similar to MyYahoo.com, Start.Me and Protopage.com).
+A JQueryUI plugin for creating dashboard pages similar to MyYahoo.com, Start.Me and Protopage.com. 
 
 The dashboard is composed of widgets arranged in horizontal bands. Each band can have between 1 and 3
-columns and its own height. The number of columns and the height of each band can be
-interactively edited by the user.
+columns. The height of each band can be set interactively.
 
 Widgets are delimited areas, resembling standard windows, that can be drag-n-dropped around
 the dashboard. Each widget has a caption that hosts buttons for triggering "Edit", "Delete", 
