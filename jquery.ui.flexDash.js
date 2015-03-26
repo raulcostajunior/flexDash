@@ -3,35 +3,21 @@
 
   A jQuery UI plugin that implements a dashboard with editable bands (rows).
 
-  The dashboard is composed of widgets arranged in bands. Each band can have between 1 and 3
-  columns and its own height. Both the number of columns and the height of each band can be
-  interactively edited by the user.
-
-  Widgets are delimited areas, resembling standard windows, that can be drag-n-dropped around
-  the dashboard. Each widget has a caption that hosts buttons for triggering edit, delete and
-  display info actions. It´s up to the component host application to provide handlers to
-  execute each of the actions required by the user - the Flex Dashboard calls a host provided
-  callback for each action requested by the interacting user. 
-
-  Any modification to the dashboard lay-out or contents triggers a 'changed' event. One can
-  use an event handler for the 'changed' event to persist the current dashboard configuration.
-  The 'loadFromJson' initializes the dashboard from given JSON formatted configuration. The 
-  'asJson' serializes the current dashboard configuration to a JSON formatted string.
-
   version 1.0
 
   Dependencies:
     jQuery 1.7.1+,
-    jQueryUI 1.9+ (module inclusion order is relevant)
-        jquery.ui.core,
-        jquery.ui.widget,
-        jquery.ui.button,
-        jquery.ui.mouse,
-        jquery.ui.resizable,
-        jquery.ui.draggable,
-        jquery.ui.droppable,
-    jQuery Resize Plugin (jquery.ba-resize.js: used to handle resizing of the dashboard container; available
-                          at http://github.com/cowboy/jquery-resize/)
+    jQueryUI 1.9+ 
+        In particular the following JQueryUI modules are required:
+          jquery.ui.core,
+          jquery.ui.widget,
+          jquery.ui.button,
+          jquery.ui.mouse,
+          jquery.ui.resizable,
+          jquery.ui.draggable,
+          jquery.ui.droppable,
+          jQuery Resize Plugin (jquery.ba-resize.js: used to handle resizing of the dashboard container; available
+                                at http://github.com/cowboy/jquery-resize/)
 */
 
 (function ($) {
