@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlexDash 1.0 Demo</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/jquery.ui.flexDash.css" />
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Flex Dashboard</h2>
+    <p>
+        <input type="checkbox" id="chkEditMode" checked="false"/>Band Edit Mode
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" id="btnAddWidget" value="Add Widget"/>
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <input type="button" id="btnLoadConfig" value="Load Last Saved Config" />
+        <input type="button" id="btnSaveConfig" value="Save Config" />
+    </p>
+    <div id="dashboard" style="width: 100%">
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.button.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.mouse.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.resizable.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.draggable.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.droppable.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.flexDash.js"></script>
+    <script type="text/javascript" src="js/jquery.ba-resize.js"></script>
+    <script>
+        $(function () {
+           // Firefox and Chrome (and probably other browsers) "cache" the state of the checkbox.
+           // The instruction below forces the checkbox to be initially unchecked.
+           $('#chkEditMode').attr('checked', false);
+
+           $('#dashboard').flexDash({
+               defaultColumnCount: 3,
+               defaultHeight: 210,
+               fnConfirmWidgetDelete: function(wd) {
+                   return confirm('Custom delete confirm: Do you want to delete widget "' + wd.title + '"?');
+               },
+               fnEditWidget: function(wd) {
+                   alert('Edit action for Widget "' + wd.title + '" activated.');
+               },
+               changed: function() {
+                    console.log('Dashboard has changed');
+               }
+           });
+
+           $('#btnAddWidget').on('click', function () {
+               var current_time = new Date().getTime();
+               $('#dashboard').flexDash('addWidget', {
+                  id: current_time,
+                  title: 'Widget @ ' + current_time,
+                  renderUrl: 'xyzw.html'
+               });
+           });
+
+           $('#btnSaveConfig').on('click', function () {
+               var dash_json =
+                       $('#dashboard').flexDash('asJson');
+               //alert('Dash JSON:\r\n' + dash_json);
+               localStorage.setItem('lastSavedConfig', dash_json);
+           });
+
+           $('#btnLoadConfig').on('click', function () {
+               var dash_json = localStorage.getItem('lastSavedConfig');
+               $('#dashboard').flexDash('loadFromJson', dash_json);
+           });
+
+           $('#chkEditMode').on('change', function (evt) {
+               var chk_elemen = evt.target;
+
+               if (chk_elemen.checked) {
+                   $('#dashboard').flexDash('enterBandEditMode');
+               }
+               else {
+                   $('#dashboard').flexDash('leaveBandEditMode');
+               }
+           })
+
+        });
+    </script>
+</body>
+</html>
