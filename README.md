@@ -18,6 +18,6 @@ The "loadFromJson" method sets the dashboard state to the state previously seria
     
 ## Demo
 
-There's a demo o flexDash at https://raulcostajunior.github.io/flexDash/flexDashDemo.html.
+There's a demo of flexDash at https://raulcostajunior.github.io/flexDash/flexDashDemo.html.
     
 
